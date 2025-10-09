@@ -12,6 +12,10 @@ return {
     g.loaded_netrwPlugin = 1
     opt.termguicolors = true
 
-    require("nvim-tree").setup()
+    require("nvim-tree").setup({
+      filters = {
+        git_ignored = false,
+      },
+    })
   end
 }
