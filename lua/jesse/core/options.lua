@@ -15,3 +15,16 @@ vim.api.nvim_create_autocmd("FileType", {
 })
 
 vim.opt.clipboard:append("unnamedplus")
+
+local api = vim.api
+local function augroup(name) return api.nvim_create_augroup("clean_cr_" .. name, { clear = true }) end
+
+-- Remove \r (carriage return) ^M on paste or on opening files
+api.nvim_create_autocmd({ "BufReadPost", "TextChanged", "TextChangedI" }, {
+  group = augroup("remove_cr"),
+  callback = function()
+    if vim.bo.modifiable then
+      pcall(vim.cmd, [[%s/\r//g]])
+    end
+  end,
+})
