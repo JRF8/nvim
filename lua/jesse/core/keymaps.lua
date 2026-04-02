@@ -19,3 +19,23 @@ vim.keymap.set("n", "<leader>tx", "<cmd>tabclose<CR>", { desc = "Close current t
 vim.keymap.set("n", "<leader>tn", "<cmd>tabn<CR>", { desc = "Go to next tab" }) --  go to next tab
 vim.keymap.set("n", "<leader>tp", "<cmd>tabp<CR>", { desc = "Go to previous tab" }) --  go to previous tab
 vim.keymap.set("n", "<leader>tf", "<cmd>tabnew %<CR>", { desc = "Open current buffer in new tab" }) --  move current buffer to new tab
+
+-- Function to insert your specific FRJE timestamp
+local function insert_frje_timestamp()
+    local timestamp = os.date("--- FRJE - %Y%m%d %H%M ---")
+    
+    -- nvim_put inserts text at cursor:
+    -- {timestamp}: the string to insert
+    -- "c": character-wise insertion
+    -- true: follow the cursor (move cursor to end of string)
+    -- true: create a new undo point
+    vim.api.nvim_put({timestamp}, "c", true, true)
+end
+
+-- Map <leader>dt in Normal mode
+vim.keymap.set('n', '<leader>dt', insert_frje_timestamp, { 
+    desc = 'Insert FRJE work timestamp' 
+})
+
+
+
