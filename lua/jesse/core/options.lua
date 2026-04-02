@@ -15,3 +15,6 @@ vim.api.nvim_create_autocmd("FileType", {
 })
 
 vim.opt.clipboard:append("unnamedplus")
+
+
+vim.opt.conceallevel = 2
