@@ -28,3 +28,5 @@ api.nvim_create_autocmd({ "BufReadPost", "TextChanged", "TextChangedI" }, {
     end
   end,
 })
+
+vim.opt.conceallevel = 2
