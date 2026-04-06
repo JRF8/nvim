@@ -14,7 +14,7 @@ return {
 
     require("nvim-tree").setup({
       filters = {
-        git_ignored = false,
+        git_ignore = false,
       },
     })
   end
