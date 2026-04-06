@@ -23,7 +23,7 @@ vim.keymap.set("n", "<leader>tf", "<cmd>tabnew %<CR>", { desc = "Open current bu
 -- Function to insert your specific FRJE timestamp
 local function insert_frje_timestamp()
     local timestamp = os.date("--- FRJE - %Y%m%d %H%M ---")
-    
+
     -- nvim_put inserts text at cursor:
     -- {timestamp}: the string to insert
     -- "c": character-wise insertion
@@ -33,9 +33,8 @@ local function insert_frje_timestamp()
 end
 
 -- Map <leader>dt in Normal mode
-vim.keymap.set('n', '<leader>dt', insert_frje_timestamp, { 
-    desc = 'Insert FRJE work timestamp' 
+vim.keymap.set('n', '<leader>dt', insert_frje_timestamp, {
+    desc = 'Insert FRJE work timestamp'
 })
 
-
-
+vim.keymap.set('n', '<leader>tt', "<cmd>NvimTreeToggle<CR>", {desc = "Toggle Nvim Tree"})
