@@ -21,7 +21,7 @@ return {
           -- require('snippy').expand_snippet(args.body) -- For `snippy` users.
           -- vim.fn["UltiSnips#Anon"](args.body) -- For `ultisnips` users.
           -- vim.snippet.expand(args.body) -- For native neovim snippets (Neovim v0.10+)
-  
+
           -- For `mini.snippets` users:
           -- local insert = MiniSnippets.config.expand.insert or MiniSnippets.default_insert
           -- insert({ body = args.body }) -- Insert at cursor
@@ -50,7 +50,7 @@ return {
         { name = 'buffer' },
       })
     })
-  
+
     -- To use git you need to install the plugin petertriho/cmp-git and uncomment lines below
     -- Set configuration for specific filetype.
     --[[ cmp.setup.filetype('gitcommit', {
@@ -60,8 +60,8 @@ return {
         { name = 'buffer' },
       })
    })
-   require("cmp_git").setup() ]]-- 
-  
+   require("cmp_git").setup() ]]--
+
     -- Use buffer source for `/` and `?` (if you enabled `native_menu`, this won't work anymore).
     cmp.setup.cmdline({ '/', '?' }, {
       mapping = cmp.mapping.preset.cmdline(),
@@ -69,7 +69,7 @@ return {
         { name = 'buffer' }
       }
     })
-  
+
     -- Use cmdline & path source for ':' (if you enabled `native_menu`, this won't work anymore).
     cmp.setup.cmdline(':', {
       mapping = cmp.mapping.preset.cmdline(),
@@ -80,7 +80,7 @@ return {
       }),
       matching = { disallow_symbol_nonprefix_matching = false }
     })
-  
+
     -- Set up lspconfig.
     local capabilities = require('cmp_nvim_lsp').default_capabilities()
     -- Replace <YOUR_LSP_SERVER> with each lsp server you've enabled.

@@ -15,7 +15,7 @@ return {
     vim.keymap.set("n", "<leader>h3", function() ui.nav_file(3) end, { desc = "navigate to harpoon file 3" })
     vim.keymap.set("n", "<leader>h4", function() ui.nav_file(4) end, { desc = "navigate to harpoon file 4" })
 
-    require("harpoon").setup()    
+    require("harpoon").setup()
 
   end
 }
