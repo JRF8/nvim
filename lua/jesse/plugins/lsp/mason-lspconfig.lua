@@ -1,12 +1,19 @@
 return {
-  "mason-org/mason-lspconfig.nvim",
+  "williamboman/mason-lspconfig.nvim",
   dependencies = {
-    "mason-org/mason.nvim",
+    "williamboman/mason.nvim",
     "neovim/nvim-lspconfig",
   },
-
   config = function()
-    require("mason-lspconfig").setup()
-  end
+    -- 1. Setup the base Mason tool manager first
+    require("mason").setup()
 
+    -- 2. Setup the LSP bridge
+    require("mason-lspconfig").setup({
+      ensure_installed = {
+        "pyright",
+        "ruff",
+      },
+    })
+  end,
 }
