@@ -11,8 +11,11 @@ return {
     -- 2. Setup the LSP bridge
     require("mason-lspconfig").setup({
       ensure_installed = {
+        -- Python
         "pyright",
         "ruff",
+        -- C
+        "clangd"
       },
     })
   end,

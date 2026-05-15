@@ -7,7 +7,6 @@ return {
     -- 1. Get capabilities for nvim-cmp
     local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
-    -- 2. Configure Pyright (Logic/Types)
     vim.lsp.config("pyright", {
       capabilities = capabilities,
       settings = {
@@ -21,14 +20,24 @@ return {
       },
     })
 
-    -- 3. Configure Ruff (Linting/Organizing Imports)
     vim.lsp.config("ruff", {
       capabilities = capabilities,
     })
 
-    -- 4. ENABLE the servers (This is what actually starts them)
+    vim.lsp.config("clangd", {
+      capabilities = capabilities,
+      cmd = {
+        "clangd",
+        "--background-index",
+        "--clang-tidy",
+        "--completion-style=detailed",
+        "--header-insertion=iwyu",
+      },
+    })
+
     vim.lsp.enable("pyright")
     vim.lsp.enable("ruff")
+    vim.lsp.enable("clangd")
 
     -- Create an autocmd that runs whenever an LSP attaches to a file
     vim.api.nvim_create_autocmd("LspAttach", {
