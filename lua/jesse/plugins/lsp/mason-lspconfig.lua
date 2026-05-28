@@ -15,7 +15,9 @@ return {
         "pyright",
         "ruff",
         -- C
-        "clangd"
+        "clangd",
+        -- lua
+        "lua_ls",
       },
     })
   end,
