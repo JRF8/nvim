@@ -7,7 +7,11 @@ return {
 
     configs.setup({
       indent = { enable = true },
-      ensure_installed = { "lua" },
+      ensure_installed = {
+        "lua",
+        "markdown",
+        "markdown_inline",
+      },
     })
   end
 }
